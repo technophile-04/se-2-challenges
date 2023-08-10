@@ -13,6 +13,9 @@ Deploy your contracts to a testnet then build and upload your app to a public we
 
 ## Checkpoint 0: 📦 Environment 📚
 
+Want a fresh cloud environment? Click this to open a gitpod workspace, then skip to Checkpoint 1 after the tasks are complete.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/scaffold-eth/se-2-challenges/tree/base-challenge-template)
 Before you begin, you need to install the following tools:
 
 - [Node (v18 LTS)](https://nodejs.org/en/download/)
