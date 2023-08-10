@@ -30,6 +30,12 @@ export const appChains = configureChains(
   [
     jsonRpcProvider({
       rpc: chain => {
+        // This is for gitpod as gitpod won't start local blockchain at localhost
+        if (process.env.NEXT_PUBLIC_GITPOD_PROVIDER && chain.id === 31337) {
+          return {
+            http: `${process.env.NEXT_PUBLIC_GITPOD_PROVIDER}`,
+          };
+        }
         if (chain.rpcUrls.alchemy?.http[0]) {
           return {
             http: `${chain.rpcUrls.alchemy.http[0]}/${scaffoldConfig.alchemyApiKey}`,
