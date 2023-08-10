@@ -1,0 +1,21 @@
+tasks:
+  - name: App
+    init: yarn && gp sync-done install
+    command: yarn start
+  - name: Chain
+    init: gp sync-await install
+    command: yarn chain && gp sync-done chain
+    openMode: split-right
+  - name: Deployment
+    init: gp sync-await chain
+    command: yarn deploy
+    openMode: split-right
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+    - NomicFoundation.hardhat-solidity
